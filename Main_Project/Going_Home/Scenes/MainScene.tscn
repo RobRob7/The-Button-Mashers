@@ -6,7 +6,7 @@
 [node name="MainScene" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 440 )
+position = Vector2( 143, 440 )
 scale = Vector2( 0.638516, 0.70232 )
 
 [node name="Floor" parent="." instance=ExtResource( 2 )]
