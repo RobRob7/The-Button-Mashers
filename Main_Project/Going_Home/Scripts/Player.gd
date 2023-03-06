@@ -10,6 +10,10 @@ var vel : Vector2 = Vector2()
 # get the player model
 onready var sprite : Sprite = get_node("Sprite")
 
+onready var initPos : Vector2 = Vector2(position.x, position.y)
+
+#var initPos : Vector2 = sprite.getPosition()
+
 # utlizes Cooldown.gd script
 const cooldown = preload("res://scripts/Cooldown.gd")
 
@@ -114,3 +118,5 @@ func flip_character_model_depending_on_direction():
 	elif vel.x > 0:
 		$AnimatedSprite.flip_h = false
 
+func respawn():
+	set_global_position(initPos)
