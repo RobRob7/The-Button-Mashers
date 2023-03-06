@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/enemyMob/angery.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Enemy.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.5, 12 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.5, 13.5 )
 
 [node name="MainScene" type="Node2D"]
 
@@ -12,8 +20,8 @@ scale = Vector2( 0.638516, 0.70232 )
 [node name="Floor" parent="." instance=ExtResource( 2 )]
 position = Vector2( 32, 624 )
 
-[node name="Floor2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 112, 624 )
+[node name="Floor2" parent="Floor" instance=ExtResource( 2 )]
+position = Vector2( 80, 0 )
 
 [node name="Floor3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 192, 624 )
@@ -158,3 +166,25 @@ position = Vector2( 920, -24 )
 
 [node name="Floor26" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1000, -24 )
+
+[node name="Enemy" type="KinematicBody2D" parent="."]
+position = Vector2( 809, 571 )
+script = ExtResource( 4 )
+
+[node name="Angery" type="Sprite" parent="Enemy"]
+position = Vector2( -43, -38 )
+scale = Vector2( 0.0753846, 0.0701493 )
+texture = ExtResource( 3 )
+
+[node name="enemyColl" type="CollisionShape2D" parent="Enemy"]
+position = Vector2( -43, -38 )
+shape = SubResource( 1 )
+
+[node name="hitbox" type="Area2D" parent="Enemy"]
+
+[node name="hitboxColl" type="CollisionShape2D" parent="Enemy/hitbox"]
+position = Vector2( -43, -38 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Enemy/hitbox" to="Player" method="_on_hitbox_body_entered"]
+[connection signal="body_entered" from="Enemy/hitbox" to="Enemy" method="_on_hitbox_body_entered"]
