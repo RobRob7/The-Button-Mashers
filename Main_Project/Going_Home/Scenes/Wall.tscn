@@ -6,7 +6,7 @@
 
 [sub_resource type="QuadMesh" id=3]
 
-[node name="Floor" type="StaticBody2D" groups=["floor"]]
+[node name="Floor" type="StaticBody2D" groups=["wall"]]
 physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
