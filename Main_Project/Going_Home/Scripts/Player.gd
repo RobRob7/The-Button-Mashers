@@ -59,8 +59,8 @@ func check_for_jump():
 	if Input.is_action_just_pressed("jump"):
 		if(is_on_floor()):
 			vel.y -= jumpForce
-		else:
-			$AnimatedSprite.play("jump")
+#		else:
+#			$AnimatedSprite.play("jump")
 
 
 ### checks whether player is moving left or right
@@ -118,5 +118,8 @@ func flip_character_model_depending_on_direction():
 	elif vel.x > 0:
 		$AnimatedSprite.flip_h = false
 
+
+### respawn player at original starting position
 func respawn():
 	set_global_position(initPos)
+

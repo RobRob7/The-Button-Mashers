@@ -20,7 +20,7 @@
 [ext_resource path="res://Assets/Male/Character 1/Clothes 1/Character1M_1_jump_0.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 3.09896, 5.54167 )
+extents = Vector2( 3.09896, 5.33333 )
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Camera2D
@@ -71,7 +71,7 @@ position = Vector2( -1, -1 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1, 0 )
+position = Vector2( -1, -9.53674e-07 )
 scale = Vector2( 3, 3 )
 shape = SubResource( 1 )
 
@@ -84,7 +84,7 @@ script = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-animation = "jump"
+animation = "idle"
 playing = true
 
 [node name="SprintTimer" type="Timer" parent="."]

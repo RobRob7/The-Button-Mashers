@@ -27,28 +27,28 @@ position = Vector2( 230, -528 )
 [node name="Enemy7" parent="Enemy" instance=ExtResource( 3 )]
 position = Vector2( -281, -298 )
 
-[node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
+[node name="Platforms" parent="." instance=ExtResource( 4 )]
 position = Vector2( 754, 429 )
 scale = Vector2( 2.92, 1 )
 
-[node name="StaticBody2D7" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D7" parent="Platforms" instance=ExtResource( 4 )]
 
-[node name="StaticBody2D8" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D8" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( -151.37, 84 )
 
-[node name="StaticBody2D9" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D9" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( -151.37, 84 )
 
-[node name="StaticBody2D3" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D3" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( -171.918, -107 )
 
-[node name="StaticBody2D4" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D4" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( -90.411, -220 )
 
-[node name="StaticBody2D5" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D5" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( 1.71231, -352 )
 
-[node name="StaticBody2D6" parent="StaticBody2D2" instance=ExtResource( 4 )]
+[node name="StaticBody2D6" parent="Platforms" instance=ExtResource( 4 )]
 position = Vector2( -171.918, -310 )
 
 [node name="RightWall" parent="." instance=ExtResource( 2 )]
