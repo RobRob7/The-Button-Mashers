@@ -7,6 +7,8 @@ var dashSpeed : int = 20
 
 var vel : Vector2 = Vector2()
 
+var initPos : Vector2 = Vector2(144, 440)
+
 # get the player model
 onready var sprite : Sprite = get_node("Sprite")
 
@@ -123,3 +125,5 @@ func flip_character_model_depending_on_direction():
 func respawn():
 	set_global_position(initPos)
 
+func respawn():
+	set_global_position(initPos)
