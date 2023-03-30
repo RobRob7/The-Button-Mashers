@@ -185,8 +185,10 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="inViewAngery" type="Sprite" parent="Enemy"]
+position = Vector2( -97, -154 )
 scale = Vector2( 0.0764424, 0.0710355 )
 texture = ExtResource( 5 )
+offset = Vector2( 1268.93, 2167.93 )
 
 [connection signal="body_entered" from="Enemy/hitbox" to="Player" method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="Enemy/hitbox" to="Enemy" method="_on_hitbox_body_entered"]
