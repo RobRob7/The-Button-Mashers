@@ -1,9 +1,15 @@
 extends KinematicBody2D
 
-var speed : int = 200
-var jumpForce : int = 500
+const CHAIN_PULL = 105
+
+var speed : int = 185
+var jumpForce : int = 450
+var doubleJumpForce : int = 400
 var gravity : int = 1000
 var dashSpeed : int = 20
+
+var jump_max = 2
+var jump_count = 0
 
 var vel : Vector2 = Vector2()
 
@@ -13,8 +19,6 @@ var vel : Vector2 = Vector2()
 onready var sprite : Sprite = get_node("Sprite")
 
 onready var initPos : Vector2 = Vector2(position.x, position.y)
-
-#var initPos : Vector2 = sprite.getPosition()
 
 # utlizes Cooldown.gd script
 const cooldown = preload("res://scripts/Cooldown.gd")
@@ -31,8 +35,30 @@ onready var sprintTimer := $SprintTimer
 # timer for sprint cooldown
 onready var sprintCooldown := $SprintCooldown
 
+var chain_velocity := Vector2(0,0)
+
+func _input(event : InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.pressed:
+			$Chain.shoot(event.position - get_viewport().size * 0.5)
+		else:
+			$Chain.release()
 
 func _physics_process(delta):
+	
+	var walk = (Input.get_action_strength("move_right") - Input.get_action_strength("move_left")) * speed
+	
+	if $Chain.hooked:
+		chain_velocity = to_local($Chain.tip).normalized() * CHAIN_PULL
+		if chain_velocity.y > 0:
+			chain_velocity.y *= 0.55
+		else:
+			chain_velocity.y *= 1.65
+		if sign(chain_velocity.x) != sign(walk):
+			chain_velocity.x *= 0.7
+	else:
+		chain_velocity = Vector2(0,0)
+	vel += chain_velocity
 	
 	dash_cooldown.tick(delta)
 	
@@ -57,12 +83,13 @@ func _physics_process(delta):
 
 ### checks for if player is trying to jump
 func check_for_jump():
+	if(is_on_floor() && jump_count!=0):
+		jump_count = 0
 	
-	if Input.is_action_just_pressed("jump"):
-		if(is_on_floor()):
-			vel.y -= jumpForce
-#		else:
-#			$AnimatedSprite.play("jump")
+	if(jump_count < jump_max):
+		if Input.is_action_just_pressed("jump"):
+			vel.y = -jumpForce
+			jump_count += 1
 
 
 ### checks whether player is moving left or right
@@ -70,11 +97,11 @@ func check_for_walking_left_and_right():
 	
 	# moving left
 	if(Input.is_action_pressed("move_left")):
-		vel.x -= speed
+		vel.x = -speed
 		$AnimatedSprite.play("walk")
 	# moving right
 	elif(Input.is_action_pressed("move_right")):
-		vel.x += speed
+		vel.x = speed
 		$AnimatedSprite.play("walk")
 	else:
 		$AnimatedSprite.play("idle")
