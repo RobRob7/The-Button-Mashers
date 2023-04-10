@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Options_Button_pressed():
-	get_tree().change_scene("res://Scenes/OptionsMainMenu.tscn")
+	get_tree().change_scene("res://Scenes/MainMenu/OptionsMainMenu.tscn")
