@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/MainMenu/Quit Button.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MainMenu/Options Button.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/MainMenu/Start Button.gd" type="Script" id=3]
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -76.5
+margin_top = -88.5
+margin_right = 76.5
+margin_bottom = 88.5
+alignment = 1
+
+[node name="Start Button" type="Button" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 153.0
+margin_bottom = 74.0
+text = "Start"
+script = ExtResource( 3 )
+
+[node name="Options Button" type="Button" parent="VBoxContainer"]
+margin_top = 78.0
+margin_right = 153.0
+margin_bottom = 98.0
+text = "Options"
+script = ExtResource( 2 )
+
+[node name="Quit Button" type="Button" parent="VBoxContainer"]
+margin_top = 102.0
+margin_right = 153.0
+margin_bottom = 122.0
+text = "Quit"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="VBoxContainer/Start Button" to="VBoxContainer/Start Button" method="_on_Start_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options Button" to="VBoxContainer/Options Button" method="_on_Options_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="VBoxContainer/Quit Button" method="_on_Quit_Button_pressed"]
