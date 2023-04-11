@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inViewAngery.png-e35f7bc2a1ec0183db5725387b27c008.stex"
+path="res://.import/laser.png-c9462add0c37ae19778e59f32552154d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EnemyMob/inViewAngery.png"
-dest_files=[ "res://.import/inViewAngery.png-e35f7bc2a1ec0183db5725387b27c008.stex" ]
+source_file="res://Assets/Attacks/laser.png"
+dest_files=[ "res://.import/laser.png-c9462add0c37ae19778e59f32552154d.stex" ]
 
 [params]
 

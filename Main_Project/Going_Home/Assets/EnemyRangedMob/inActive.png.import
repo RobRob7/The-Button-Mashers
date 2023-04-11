@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inViewAngery.png-e35f7bc2a1ec0183db5725387b27c008.stex"
+path="res://.import/inActive.png-7a26721b8a9c180bb9543f4be118d15b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/EnemyMob/inViewAngery.png"
-dest_files=[ "res://.import/inViewAngery.png-e35f7bc2a1ec0183db5725387b27c008.stex" ]
+source_file="res://Assets/EnemyRangedMob/inActive.png"
+dest_files=[ "res://.import/inActive.png-7a26721b8a9c180bb9543f4be118d15b.stex" ]
 
 [params]
 
