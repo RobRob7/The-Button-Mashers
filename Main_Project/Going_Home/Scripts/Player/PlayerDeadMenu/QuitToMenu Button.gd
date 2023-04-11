@@ -11,5 +11,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-func _on_Restart_Button_pressed():
-	get_tree().change_scene("res://Scenes/levels/Level 1.tscn")
+func _on_QuitToMenu_Button_pressed():
+	print("Main menu")
+	get_tree().change_scene("res://Scenes/MainMenu/MainMenu.tscn")
