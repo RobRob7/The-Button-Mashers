@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/MainMenu/Quit Button.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MainMenu/Options Button.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/MainMenu/Start Button.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Fonts/ARIALBD.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/MainMenu/MainMenuBackground.tscn" type="PackedScene" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 34
+font_data = ExtResource( 4 )
+
+[node name="Main Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1472.0
+margin_top = -100.0
+margin_right = -1319.0
+margin_bottom = 77.0
+rect_scale = Vector2( 2, 2 )
+alignment = 1
+
+[node name="Start Button" type="Button" parent="VBoxContainer"]
+margin_top = 54.0
+margin_right = 153.0
+margin_bottom = 74.0
+keep_pressed_outside = true
+text = "Start"
+script = ExtResource( 3 )
+
+[node name="Options Button" type="Button" parent="VBoxContainer"]
+margin_top = 78.0
+margin_right = 153.0
+margin_bottom = 98.0
+keep_pressed_outside = true
+text = "Options"
+script = ExtResource( 2 )
+
+[node name="Quit Button" type="Button" parent="VBoxContainer"]
+margin_top = 102.0
+margin_right = 153.0
+margin_bottom = 122.0
+keep_pressed_outside = true
+text = "Quit"
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 0
+limit_bottom = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = -912.0
+margin_top = 64.0
+margin_right = -688.0
+margin_bottom = 104.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "GOING HOME"
+
+[node name="MenuBackground" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1024, 0 )
+z_index = -100
+
+[connection signal="pressed" from="VBoxContainer/Start Button" to="VBoxContainer/Start Button" method="_on_Start_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options Button" to="VBoxContainer/Options Button" method="_on_Options_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit Button" to="VBoxContainer/Quit Button" method="_on_Quit_Button_pressed"]

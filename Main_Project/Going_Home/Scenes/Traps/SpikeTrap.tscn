@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/AdventurePack/Assets.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Traps/SpikeTrap.gd" type="Script" id=2]
+
+[node name="SpikeTrap" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 176.452, 128.198, 15.2084, 15.7153 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 0, -8, 8, 0, 8, 8, -8, 8, -8, 0 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
