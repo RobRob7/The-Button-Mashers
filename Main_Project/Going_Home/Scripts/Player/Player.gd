@@ -169,3 +169,8 @@ func respawn():
 	health_of_player()
 	#set_global_position(initPos)
 	
+
+
+func _on_PlayerHitbox_body_entered(body):
+	if body.get_name() == "Enemy":
+		respawn()

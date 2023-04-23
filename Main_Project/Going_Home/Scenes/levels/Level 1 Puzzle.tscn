@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scenes/FirstVerObjects/Platform.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Puzzles/PuzzlePlatform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Traps/SpikeTrap.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Puzzles/Level 1 Puzzle.gd" type="Script" id=6]
+
+[node name="Level 1 Puzzle" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Puzzle Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( -23, -65 )
+
+[node name="Puzzle Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 121, 14 )
+
+[node name="Puzzle Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 181, -123 )
+
+[node name="Puzzle Platform4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 243, -41 )
+
+[node name="Puzzle Platform5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 362, 58 )
+
+[node name="Puzzle Platform6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 458, -115 )
+
+[node name="Portal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 612, -23 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( -344, -184 )
+
+[node name="Platform" parent="." instance=ExtResource( 1 )]
+position = Vector2( -341, -152 )
+
+[node name="Platform2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 613, 0 )
+
+[node name="SpikeTrap" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 238 )
+scale = Vector2( 100, 1 )

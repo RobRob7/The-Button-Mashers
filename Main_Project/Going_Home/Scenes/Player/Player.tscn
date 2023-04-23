@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Male/Character 1/Clothes 1/Character1M_1_idle_3.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
@@ -43,6 +43,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 16 )
+
 [node name="Player" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
@@ -75,7 +78,7 @@ script = ExtResource( 20 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="SprintTimer" type="Timer" parent="."]
@@ -88,3 +91,10 @@ wait_time = 3.0
 [node name="Chain" parent="." instance=ExtResource( 21 )]
 visible = false
 position = Vector2( 2, -68 )
+
+[node name="PlayerHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
+shape = SubResource( 4 )
+
+[connection signal="body_entered" from="PlayerHitbox" to="." method="_on_PlayerHitbox_body_entered"]
