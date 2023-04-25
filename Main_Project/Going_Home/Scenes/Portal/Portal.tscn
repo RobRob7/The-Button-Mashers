@@ -271,7 +271,7 @@ height = 47.4047
 rotation = -0.785398
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 52 )
-frame = 41
+frame = 31
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="."]
