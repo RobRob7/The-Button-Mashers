@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/inViewAngery.png-1553abeae94f0c2cd0523de4f6ea97f9.stex"
+path="res://.import/Above_Full.png-dcf4563babc067a49462dd40a5000b2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/enemyMob/inViewAngery.png"
-dest_files=[ "res://.import/inViewAngery.png-1553abeae94f0c2cd0523de4f6ea97f9.stex" ]
+source_file="res://Scenes/Traps/Above_Full.png"
+dest_files=[ "res://.import/Above_Full.png-dcf4563babc067a49462dd40a5000b2c.stex" ]
 
 [params]
 
