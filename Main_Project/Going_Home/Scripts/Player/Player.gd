@@ -84,6 +84,10 @@ func _physics_process(delta):
 	vel = move_and_slide(vel, Vector2.UP)
 	
 	vel.y += gravity * delta
+	
+	if playerDead:
+		print("DEAD")
+		get_tree().change_scene("res://Scenes/Player/PlayerGameOverScreen.tscn")
 
 func health_of_player():
 	if(healthPlayer <= 0):

@@ -13,6 +13,15 @@ script = ExtResource( 6 )
 [node name="Puzzle Platform" parent="." instance=ExtResource( 2 )]
 position = Vector2( -23, -65 )
 
+[node name="Puzzle Platform7" parent="." instance=ExtResource( 2 )]
+position = Vector2( -23, -34 )
+
+[node name="Puzzle Platform8" parent="." instance=ExtResource( 2 )]
+position = Vector2( -23, -2 )
+
+[node name="Puzzle Platform9" parent="." instance=ExtResource( 2 )]
+position = Vector2( -23, 35 )
+
 [node name="Puzzle Platform2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 121, 14 )
 

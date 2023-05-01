@@ -1,7 +1,7 @@
 [gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://Assets/Environment/Galaxy.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/Portal/Portal.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Portal/Portal2to3.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -271,7 +271,7 @@ height = 47.4047
 rotation = -0.785398
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 52 )
-frame = 31
+frame = 33
 playing = true
 
 [node name="Hitbox" type="Area2D" parent="."]
