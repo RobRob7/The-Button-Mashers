@@ -12,5 +12,4 @@ func _ready():
 
 
 func _on_QuitToMenu_Button_pressed():
-	print("Main menu")
 	get_tree().change_scene("res://Scenes/MainMenu/MainMenu.tscn")

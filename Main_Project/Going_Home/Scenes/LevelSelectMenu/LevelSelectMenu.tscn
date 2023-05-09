@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/MainMenu/MainMenuBackground.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/LevelSelectMenu/LevelSelectMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Level ScreenCaps/Level2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Level ScreenCaps/Level1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Level ScreenCaps/Level3.png" type="Texture" id=5]
+
+[node name="LevelSelectMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="MenuBackground" parent="." instance=ExtResource( 1 )]
+modulate = Color( 0.0862745, 0.0823529, 0.0823529, 1 )
+z_index = -100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.0
+margin_top = 100.0
+margin_right = 287.0
+margin_bottom = 140.0
+custom_constants/separation = 200
+
+[node name="Level 1 Select" type="Button" parent="HBoxContainer"]
+margin_right = 58.0
+margin_bottom = 40.0
+text = "Level 1"
+
+[node name="Level 2 Select" type="Button" parent="HBoxContainer"]
+margin_left = 258.0
+margin_right = 316.0
+margin_bottom = 40.0
+text = "Level 2"
+
+[node name="Level 3 Select" type="Button" parent="HBoxContainer"]
+margin_left = 516.0
+margin_right = 574.0
+margin_bottom = 40.0
+text = "Level 3"
+
+[node name="Back to Main Menu" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "Return To Main Menu"
+
+[node name="Level 1 SS" type="Sprite" parent="."]
+position = Vector2( 256, 319.75 )
+scale = Vector2( 0.288577, 0.347297 )
+texture = ExtResource( 4 )
+
+[node name="Level 2 SS2" type="Sprite" parent="."]
+position = Vector2( 512, 320 )
+scale = Vector2( 0.227129, 0.224168 )
+texture = ExtResource( 3 )
+
+[node name="Level 3 SS3" type="Sprite" parent="."]
+position = Vector2( 768, 319.461 )
+scale = Vector2( 0.290322, 0.259023 )
+texture = ExtResource( 5 )
+
+[connection signal="pressed" from="HBoxContainer/Level 1 Select" to="." method="_on_Level_1_Select_pressed"]
+[connection signal="pressed" from="HBoxContainer/Level 2 Select" to="." method="_on_Level_2_Select_pressed"]
+[connection signal="pressed" from="HBoxContainer/Level 3 Select" to="." method="_on_Level_3_Select_pressed"]
+[connection signal="pressed" from="Back to Main Menu" to="." method="_on_Back_to_Main_Menu_pressed"]
