@@ -1192,6 +1192,9 @@ points = PoolVector2Array( 0, 0, 15.3125, 0, 15, 5.6875, 13.2775, 10.7426, 6.5, 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 9 )
 
+[node name="Portal" parent="." instance=ExtResource( 10 )]
+position = Vector2( 997, 48 )
+
 [node name="Background1" type="Sprite" parent="."]
 position = Vector2( 512, 312 )
 scale = Vector2( 2, 2.11765 )
@@ -1325,6 +1328,3 @@ position = Vector2( 578, 323 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 784, 272 )
-
-[node name="Portal" parent="." instance=ExtResource( 10 )]
-position = Vector2( 997, 48 )

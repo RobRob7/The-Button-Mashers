@@ -20,7 +20,7 @@
 [ext_resource path="res://Assets/Male/Character 1/Clothes 1/Character1M_1_jump_0.png" type="Texture" id=18]
 [ext_resource path="res://Assets/Male/Character 1/Clothes 1/Character1M_1_jump_1.png" type="Texture" id=19]
 [ext_resource path="res://Scripts/Player/Camera2D.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/Player/Chain.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/PauseMenu/PauseMenu.tscn" type="PackedScene" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.09896, 5.33333 )
@@ -88,9 +88,13 @@ one_shot = true
 [node name="SprintCooldown" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="Chain" parent="." instance=ExtResource( 21 )]
+[node name="PauseMenu" parent="." instance=ExtResource( 22 )]
+pause_mode = 2
 visible = false
-position = Vector2( 2, -68 )
+margin_left = -64.0
+margin_top = -48.0
+margin_right = -64.0
+margin_bottom = -48.0
 
 [node name="PlayerHitbox" type="Area2D" parent="."]
 

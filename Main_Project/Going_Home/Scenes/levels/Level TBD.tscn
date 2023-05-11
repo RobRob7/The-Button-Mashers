@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Portal/Portal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/levels/Level TBD.gd" type="Script" id=2]
+
+[node name="Level TBD" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+
+[node name="Portal" parent="." instance=ExtResource( 1 )]
+position = Vector2( 916, 300 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -20.0
+margin_right = 150.0
+margin_bottom = 20.0
+text = "TO BE CONTINUED..."
+
+[node name="Quit to Main Menu" type="Button" parent="."]
+margin_left = 514.0
+margin_top = 275.0
+margin_right = 582.0
+margin_bottom = 295.0
+text = "RETURN?"
+
+[connection signal="pressed" from="Quit to Main Menu" to="." method="_on_Button_pressed"]
