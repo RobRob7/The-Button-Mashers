@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MainMenu/Back.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/MainMenu/MainMenuBackground.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/MainMenu/Audio Settings.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/MainMenu/Control Settings.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/MainMenu/Graphics Settings.gd" type="Script" id=5]
 
 [node name="Options Main Menu" type="Control"]
 anchor_right = 1.0
@@ -37,6 +38,7 @@ margin_top = 48.0
 margin_right = 123.0
 margin_bottom = 68.0
 text = "Graphics Settings"
+script = ExtResource( 5 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
 margin_right = 42.0
@@ -53,4 +55,5 @@ z_index = -200
 
 [connection signal="pressed" from="VBoxContainer/Control Settings" to="VBoxContainer/Control Settings" method="_on_Control_Settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Audio Settings" to="VBoxContainer/Audio Settings" method="_on_Audio_Settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Graphics Settings" to="VBoxContainer/Graphics Settings" method="_on_Graphics_Settings_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Back" to="VBoxContainer2/Back" method="_on_Back_pressed"]
