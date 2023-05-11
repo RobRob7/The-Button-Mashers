@@ -23,27 +23,42 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="Resolution" type="Label" parent="VBoxContainer"]
-margin_right = 97.0
+margin_right = 122.0
 margin_bottom = 14.0
 text = "Resolution"
 
 [node name="ResolutionButton" type="OptionButton" parent="VBoxContainer"]
 margin_top = 18.0
-margin_right = 97.0
+margin_right = 122.0
 margin_bottom = 38.0
 text = "Resolution"
 
 [node name="Fullscreen" type="Label" parent="VBoxContainer"]
 margin_top = 42.0
-margin_right = 97.0
+margin_right = 122.0
 margin_bottom = 56.0
 text = "Fullscreen"
 
 [node name="FullscreenCheckbox" type="CheckBox" parent="VBoxContainer"]
 margin_top = 60.0
-margin_right = 97.0
+margin_right = 122.0
 margin_bottom = 84.0
+
+[node name="FPS" type="Label" parent="VBoxContainer"]
+margin_top = 88.0
+margin_right = 122.0
+margin_bottom = 102.0
+text = "Frames Per Second"
+
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer"]
+margin_top = 106.0
+margin_right = 122.0
+margin_bottom = 130.0
+min_value = 1.0
+max_value = 240.0
+value = 60.0
 
 [connection signal="pressed" from="Back Button" to="." method="_on_Back_Button_pressed"]
 [connection signal="item_selected" from="VBoxContainer/ResolutionButton" to="." method="_on_ResolutionButton_item_selected"]
 [connection signal="toggled" from="VBoxContainer/FullscreenCheckbox" to="." method="_on_FullscreenCheckbox_toggled"]
+[connection signal="value_changed" from="VBoxContainer/SpinBox" to="." method="_on_SpinBox_value_changed"]

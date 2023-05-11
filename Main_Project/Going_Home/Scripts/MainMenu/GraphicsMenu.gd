@@ -23,8 +23,10 @@ func _on_Back_Button_pressed():
 	get_tree().change_scene("res://Scenes/MainMenu/OptionsMainMenu.tscn")
 
 
-
-
 func _on_FullscreenCheckbox_toggled(button_pressed):
 	OS.window_fullscreen = button_pressed
 
+
+
+func _on_SpinBox_value_changed(value):
+	Engine.target_fps = value
