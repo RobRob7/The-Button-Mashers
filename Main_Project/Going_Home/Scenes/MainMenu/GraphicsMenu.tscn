@@ -33,5 +33,17 @@ margin_right = 97.0
 margin_bottom = 38.0
 text = "Resolution"
 
+[node name="Fullscreen" type="Label" parent="VBoxContainer"]
+margin_top = 42.0
+margin_right = 97.0
+margin_bottom = 56.0
+text = "Fullscreen"
+
+[node name="FullscreenCheckbox" type="CheckBox" parent="VBoxContainer"]
+margin_top = 60.0
+margin_right = 97.0
+margin_bottom = 84.0
+
 [connection signal="pressed" from="Back Button" to="." method="_on_Back_Button_pressed"]
 [connection signal="item_selected" from="VBoxContainer/ResolutionButton" to="." method="_on_ResolutionButton_item_selected"]
+[connection signal="toggled" from="VBoxContainer/FullscreenCheckbox" to="." method="_on_FullscreenCheckbox_toggled"]

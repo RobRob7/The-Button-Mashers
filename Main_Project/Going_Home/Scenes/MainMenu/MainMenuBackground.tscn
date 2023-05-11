@@ -268,7 +268,7 @@ position = Vector2( 696, 352 )
 scale = Vector2( 6.5, 5 )
 z_index = 100
 frames = SubResource( 51 )
-frame = 2
+frame = 38
 playing = true
 
 [node name="SpaceBackground" type="Sprite" parent="."]
