@@ -61,6 +61,7 @@ func _physics_process(delta):
 	vel.y += gravity * delta
 
 
+
 func health_of_player():
 	if(healthPlayer <= 0):
 		set_global_position(initPos)
