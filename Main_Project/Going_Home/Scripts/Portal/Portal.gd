@@ -1,7 +1,6 @@
 extends Area2D
 
-const player_on_level = preload("res://Scripts/Player/Player.gd")
-
+# function checks for collision with player, increments global level counter
 func _on_Hitbox_body_entered(_body) -> void:
 	Global.current_level = Global.current_level + 1
 	
@@ -15,6 +14,6 @@ func _on_Hitbox_body_entered(_body) -> void:
 		4:
 			Global.current_level = 1
 			get_tree().change_scene("res://Scenes/levels/Level TBD.tscn")
-			
-
-		
+	
+	
+	

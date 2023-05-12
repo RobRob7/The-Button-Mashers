@@ -1,26 +1,42 @@
 extends KinematicBody2D
 
-const CHAIN_PULL = 105
-
+# speed of player var
 var speed : int = 185
+
+# jump force of player var
 var jumpForce : int = 300
+
+# double jump force of player var
 var doubleJumpForce : int = 250
+
+# gravity on player var
 var gravity : int = 1000
+
+# dash speed of player var
 var dashSpeed : int = 20
 
+# var to hold state of player (dead or alive)
 var playerDead : int = 0
 
+# max health of player
 const maxHealthPlayer = 1
+
+# current health of player
 var healthPlayer : int  = maxHealthPlayer
 
+# max jump times
 var jump_max = 2
+
+# current jump counter
 var jump_count = 0
 
+# inital velocity vector
 var vel : Vector2 = Vector2()
 
 # get the player model
 onready var sprite : Sprite = get_node("Sprite")
 
+# get initial position of player
 onready var initPos : Vector2 = Vector2(position.x, position.y)
 
 # utlizes Cooldown.gd script
@@ -37,7 +53,8 @@ onready var sprintTimer := $SprintTimer
 
 # timer for sprint cooldown
 onready var sprintCooldown := $SprintCooldown
-	
+
+# physics process
 func _physics_process(delta):
 	
 	dash_cooldown.tick(delta)
@@ -64,7 +81,7 @@ func _physics_process(delta):
 		print("DEAD")
 		get_tree().change_scene("res://Scenes/Player/PlayerGameOverScreen.tscn")
 
-
+### function checks the health of player and resets position
 func health_of_player():
 	if(healthPlayer <= 0):
 		set_global_position(initPos)
@@ -130,14 +147,13 @@ func flip_character_model_depending_on_direction():
 	elif vel.x > 0:
 		$AnimatedSprite.flip_h = false
 
+### function respawns player
 func respawn():
 	healthPlayer = healthPlayer - 1
 	print(healthPlayer)
 	health_of_player()
-	#set_global_position(initPos)
-	
 
-
+### function checks collision with enemy
 func _on_PlayerHitbox_body_entered(body):
 	if body.get_name() == "Enemy":
 		respawn()

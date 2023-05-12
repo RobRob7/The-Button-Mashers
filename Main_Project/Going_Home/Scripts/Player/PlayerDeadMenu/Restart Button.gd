@@ -1,14 +1,14 @@
 extends Button
 
-const player_on_level = preload("res://Scripts/Player/Player.gd")
+# var used to hold current level
 var x
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	x = Global.current_level
 
-
+# function for when restart button is pressed in player dead menu
 func _on_Restart_Button_pressed():
-	#get_tree().change_scene("res://Scenes/levels/Level 1.tscn")
 	match(x):
 		1:
 			get_tree().change_scene("res://Scenes/levels/Level 1.tscn")
