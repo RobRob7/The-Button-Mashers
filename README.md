@@ -5,8 +5,8 @@ Project Site:
 https://robrob7.github.io/the-button-mashers.github.io/
 
 Instructions to run game:
-    -Navigate to the "bin" folder where you will locate the executable for the game
-     titled "Going Home". Open this .exe file to play Going Home.
+    -Navigate to the "bin" folder located in the Main_Project directory. There you will locate
+     the executable for the game titled "Going Home". Open this .exe file to play Going Home.
 
 How to open project in Godot:
     -Download Godot 3.5.2 from https://godotengine.org/download/3.x/windows/
